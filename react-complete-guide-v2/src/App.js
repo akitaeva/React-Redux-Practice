@@ -18,14 +18,26 @@ deletePersonHnadler = (personIndex)  => {
    this.setState({people: people2})
 }
 
-  nameInputHandler = (event) => {
-    this.setState( {
-      people: [
-        {name: "Jack", age: 25},
-        {name: "Jill", age: 24},
-        {name: event.target.value, age: 29}
-      ]
-    })
+nameChangeHandler = (event, id) => {
+    const personIndex = this.state.people.findIndex(p => {
+      return p.id === id;
+    });
+
+    const onePerson = {
+       ...this.state.people[personIndex]
+    }; 
+
+
+    //======== ALT APPROACH =========== :
+    //const onePerson = Object.assign({}, this.state.people[personIndex]);
+    
+
+    onePerson.name = event.target.value;
+
+    const peopleToo = [...this.state.people];
+    peopleToo[personIndex] = onePerson;
+    
+    this.setState( {people: peopleToo })
   }
 
 
@@ -55,7 +67,8 @@ deletePersonHnadler = (personIndex)  => {
               click = {() => this.deletePersonHnadler(index)}
               name = {person.name}
               age = {person.age}
-              key = {person.id}/>
+              key = {person.id}
+              changed = { (event)=> this.nameChangeHandler(event, person.id)}/>
           })}
         </div> 
       )
