@@ -1,0 +1,10 @@
+.outputEntry {
+    width: 25%;
+    font-size: 0.8em;
+    display: inline-block;
+    margin: 0.35em auto;
+    border: 1px solid limegreen;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 16px;
+    text-align: center;
+}
