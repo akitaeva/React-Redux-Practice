@@ -1,41 +1,43 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserOutput from './UserOutput/UserOutput';
-import UserInput from './UserInput/UserInput'
+import UserInput from './UserInput/UserInput';
+import ValidationCmp from './ValidationCmp/ValidationCmp';
 
 class App extends Component {
   
-  state = {
-    authors: [
-      {username: "coolBoy55"},
-      {username: "jimbeam"},
-      {username: "potatoHead"},
-    ]   
+  state = { 
+    typed: "",
+    theLength: 0
   }
   
-  nameInputHandler = (event) => {
+ inputHandler = (event) => {
+
     this.setState( {
-      authors: [
-        {username: event.target.value},
-        {username: "jimbeam"},
-        {username: "potatoHead"},
-      ]
+      typed: event.target.value,
+      theLength: event.target.value.length
     })
   }
   
   render() {
     return (
       <div className="App">
-       <h3>React assgnmt #1</h3>
-       <UserInput
-        username={this.state.authors[0].username}
-        updated={this.nameInputHandler} />
-       <UserOutput
-        username={this.state.authors[0].username}/>
-       <UserOutput
-        username={this.state.authors[1].username}/>
-       <UserOutput
-        username={this.state.authors[2].username}/>
+       <h3>React assgnmt #2</h3>
+
+      <div className="utilities">
+      <UserOutput
+        length={this.state.theLength}/>
+
+      <ValidationCmp
+        length={this.state.theLength}/>
+      </div>
+
+
+      <UserInput
+        typed={this.state.typed}
+        updated={this.inputHandler} />
+
+
       </div>
     );
   }

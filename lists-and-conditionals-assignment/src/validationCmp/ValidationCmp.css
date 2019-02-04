@@ -1,14 +1,10 @@
-.outputEntry {
+.validMsg {
     width: 25%;
     font-size: 0.8em;
     display: inline-block;
     margin: 0.35em auto;
-    border: 1px solid limegreen;
+    border: 1px solid salmon;
     box-shadow: 0 2px 3px #ccc;
     padding: 16px;
     text-align: center;
-}
-
-.enlarge {
-    font-size:1.5em; 
 }

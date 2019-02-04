@@ -5,3 +5,8 @@
 .author {
   color: yellowgreen;
 }
+
+.utilities {
+  display: flex;
+  justify-content: space-between; 
+}
