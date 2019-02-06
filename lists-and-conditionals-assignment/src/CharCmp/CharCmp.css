@@ -1,0 +1,9 @@
+.letterSquare {
+    display: inline-flex;
+    width: 10%;
+    margin: 0.1em;
+    border: 1px solid slategray;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 16px;
+    text-align: center;
+}

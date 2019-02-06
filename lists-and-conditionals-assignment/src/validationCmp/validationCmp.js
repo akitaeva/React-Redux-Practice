@@ -6,18 +6,21 @@ const validationCmp = (props) => {
     const length = props.length;
     let message = null;    
 
+    // var node = React.findDOMNode(this.message);
+    // node.classList.toggle('warning');
+
     if (length >= 8) {
         message = (
-           <p className="greenLight">Text is long enough</p>
+           <p className="userFeedback">Text is long enough</p>
         )
     } else {
         message = (
-        <p className="warning">Text is too short</p>
+        <p className="userFeedback">Text is too short</p>
         )
     }
 
     return (
-        <div className="validMsg">
+        <div className="validMsg warning">
             {message}
         </div>
     )

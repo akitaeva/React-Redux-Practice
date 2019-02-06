@@ -1,13 +1,13 @@
 import React from 'react';
-// import './CharCmp.css'
+import './CharCmp.css'
 
 
 const charCmp = (props) => {
 
 
     return (
-        <div>
-
+        <div className="letterSquare" onClick={props.click}>
+           <h3>{props.oneChar}</h3>
         </div>
     )
 }
