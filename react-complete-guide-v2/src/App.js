@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
   state = {
@@ -80,7 +80,7 @@ nameChangeHandler = (event, id) => {
       );
       style.backgroundColor ="red";
       style[":hover"] = {
-        backgroundColor: "lightred",
+        backgroundColor: "pink",
         color: "black",
       }
     }
@@ -95,6 +95,7 @@ nameChangeHandler = (event, id) => {
 
 
     return (
+      <StyleRoot>
       <div className="App">
         <h1>Hi, I am a React App</h1>
         <p className={classes.join(' ')}>This is the dynamic style!</p>
@@ -103,6 +104,7 @@ nameChangeHandler = (event, id) => {
           onClick={this.togglePeopleHandler}>Toggle People</button>     {/* LESS EFFICIENT PERFORMANCE*/}
           {thePeople}
       </div>
+      </StyleRoot>
     );
   }
 }
