@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Person/Person'
+import Person from './Person/Person';
+import Radium from 'radium';
 
 class App extends Component {
   state = {
@@ -55,7 +56,11 @@ nameChangeHandler = (event, id) => {
       border: '2px solid lightblue',
       borderRadius: '5%',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ":hover": {
+        backgroundColor: "lightgreen",
+        color: "black",
+      }
     }
 
     let thePeople = null;
@@ -74,14 +79,25 @@ nameChangeHandler = (event, id) => {
         </div> 
       );
       style.backgroundColor ="red";
+      style[":hover"] = {
+        backgroundColor: "lightred",
+        color: "black",
+      }
     }
 
-   let classes = ["red", "bold"].join(" ");
+   let classes = [];
+   if (this.state.people.length <= 2) {
+     classes.push('red');
+   }
+   if (this.state.people.length <= 1) {
+    classes.push('bold');
+  }
+
 
     return (
       <div className="App">
         <h1>Hi, I am a React App</h1>
-        <p className={classes}>This is the dynamic style!</p>
+        <p className={classes.join(' ')}>This is the dynamic style!</p>
         <button 
           style={style}
           onClick={this.togglePeopleHandler}>Toggle People</button>     {/* LESS EFFICIENT PERFORMANCE*/}
@@ -91,4 +107,4 @@ nameChangeHandler = (event, id) => {
   }
 }
 
-export default App;
+export default Radium(App);
