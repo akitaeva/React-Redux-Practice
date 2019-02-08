@@ -49,7 +49,8 @@ nameChangeHandler = (event, id) => {
   render() {
      
     const style = {
-      backgroundColor: "white",
+      backgroundColor: "green",
+      color: "white",
       font: 'inherit',
       border: '2px solid lightblue',
       borderRadius: '5%',
@@ -71,12 +72,16 @@ nameChangeHandler = (event, id) => {
               changed = { (event)=> this.nameChangeHandler(event, person.id)}/>
           })}
         </div> 
-      )
+      );
+      style.backgroundColor ="red";
     }
+
+   let classes = ["red", "bold"].join(" ");
 
     return (
       <div className="App">
         <h1>Hi, I am a React App</h1>
+        <p className={classes}>This is the dynamic style!</p>
         <button 
           style={style}
           onClick={this.togglePeopleHandler}>Toggle People</button>     {/* LESS EFFICIENT PERFORMANCE*/}
