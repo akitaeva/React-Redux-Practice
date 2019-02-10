@@ -85,12 +85,12 @@ nameChangeHandler = (event, id) => {
       }
     }
 
-   let classes = [];
+   let assignedClasses = [];
    if (this.state.people.length <= 2) {
-     classes.push('red');
+    assignedClasses.push('red');
    }
    if (this.state.people.length <= 1) {
-    classes.push('bold');
+    assignedClasses.push('bold');
   }
 
 
@@ -98,7 +98,7 @@ nameChangeHandler = (event, id) => {
       <StyleRoot>
       <div className="App">
         <h1>Hi, I am a React App</h1>
-        <p className={classes.join(' ')}>This is the dynamic style!</p>
+        <p className={assignedClasses.join(' ')}>This is the dynamic style!</p>
         <button 
           style={style}
           onClick={this.togglePeopleHandler}>Toggle People</button>     {/* LESS EFFICIENT PERFORMANCE*/}
