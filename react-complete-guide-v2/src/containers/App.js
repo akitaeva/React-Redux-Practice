@@ -6,6 +6,12 @@ import People from '../components/People/People';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
+constructor(props) {
+  super(props);
+  console.log('[App.js constructor');
+}
+
+
   state = {
     people: [
       { id: "ckj92nds", name: "Jack", age: 25},
@@ -13,7 +19,25 @@ class App extends Component {
       { id: "nsjse83c", name: "Jane", age: 29}
     ],
     showPeople: false,
-  }
+  };
+
+static getDerivedStateFromProps(props, state) {
+  console.log('[App.js] getDerivedStateFromProps: ', props);
+  return state;
+}
+
+componentDidMount() {
+  console.log('[App.js] componentDidMount');
+}
+
+shouldComponentUpdate(nextProps, nextState) {
+  console.log("[App.js] shouldComponentUpdate");
+  return true;
+}
+
+componentDidUpdate(prevProps, prevState, snapshot){
+  console.log('[App.js] componentDidUpdate');
+} 
 
 deletePersonHnadler = (personIndex)  => {
    const people2 = this.state.people.slice();
@@ -50,6 +74,7 @@ nameChangeHandler = (event, id) => {
   }
 
   render() {
+    console.log('[App.js] render'); 
     let thePeople = null;
  
 
@@ -65,6 +90,7 @@ nameChangeHandler = (event, id) => {
 
       <div className={classes.App}>
            <Cockpit 
+           title = {this.props.appTitle}
            showPeople = {this.state.showPeople}
            people = {this.state.people} 
            clicked = {this.togglePeopleHandler}/>
