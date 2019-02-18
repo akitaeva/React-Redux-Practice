@@ -2,16 +2,27 @@ import React, {useEffect} from 'react';
 
 import classes from './Cockpit.css';
 
-const cockpit = (props) => {
+const cockpit = props => {
 
-  useEffect(() => {                    //   componentDidMount & componentDidUpdate in 1   
-        console.log("[Cockpit.js] useEffect")  
-  // "http" request
-    setTimeout(()=> {
-        alert("Saved data to the cloud!");
-    }, 500);
-      // [] - empty array allows for the one time exxecution on load
-  }, [props.persons]);  // a true array -> field lets control the execution 
+
+//   useEffect(() => {                    //   componentDidMount & componentDidUpdate in 1   
+//     console.log("[Cockpit.js] useEffect"); 
+//   // "http" request
+//     const timer = setTimeout(() => {
+//         alert("Saved data to the cloud!");
+//     }, 500);
+//     //doesn't have to have a RETURN
+//     //if it does, it would be a function that executes before the main useEffect() runs,
+//     //but AFTER the (first) render cycle
+//     return () => {
+//         clearTimeout(timer);
+//         console.log("[Cockpit.js] cleanup work in useEffect");  
+//     }; 
+//       // [] - empty array allows for the one time execution on load
+//       // [props.persons] - a true array => the field lets control the execution of useEffect method
+//   }, []);  
+
+  
   
 let assignedClasses = [];
 let btnClass='';
@@ -39,4 +50,4 @@ return (
     );
 };
 
-export default cockpit;
+export default React.memo(cockpit);

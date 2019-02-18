@@ -4,6 +4,7 @@ import './App.css';
 // import Person from '../components/People/Person/Person';
 import People from '../components/People/People';
 import Cockpit from '../components/Cockpit/Cockpit';
+import WithClass from '../hoc/WithClass';
 
 class App extends Component {
 constructor(props) {
@@ -19,6 +20,7 @@ constructor(props) {
       { id: "nsjse83c", name: "Jane", age: 29}
     ],
     showPeople: false,
+    showCockpit: true,
   };
 
 static getDerivedStateFromProps(props, state) {
@@ -88,14 +90,20 @@ nameChangeHandler = (event, id) => {
 
     return (
 
-      <div className={classes.App}>
+      <WithClass classes={classes.App}>
+      <button onClick={() => {this.setState({ showCockpit: false}); }}>REMOVE COCKPIT</button>
+      {this.state.showCockpit ? (
+
+
            <Cockpit 
            title = {this.props.appTitle}
            showPeople = {this.state.showPeople}
            people = {this.state.people} 
-           clicked = {this.togglePeopleHandler}/>
+           clicked = {this.togglePeopleHandler}
+           />
+           ): null }
           {thePeople}
-      </div>
+      </WithClass>
 
     );
   }

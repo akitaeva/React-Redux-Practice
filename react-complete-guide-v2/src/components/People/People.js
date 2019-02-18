@@ -8,9 +8,17 @@ class People extends Component {
         return state;
     }
 
-shouldComponentUpdate(nextProps, nextState) {
-    console.log('[People.js] shouldComponentUpdate...');
-    return true;  //normally conditioned by comparison of props
+shouldComponentUpdate(nextProps, nextState) {    //conditioned by comparison of props
+  console.log('[People.js] shouldComponentUpdate...');
+  if (
+      nextProps.people !== this.props.people || 
+      nextProps.changed !== this.props.changed || 
+      nextProps.clicked !== this.props.clicked ) {
+    return true;  
+  } else {
+      return false;
+  }
+   
 }
 
 getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -22,6 +30,10 @@ getSnapshotBeforeUpdate(prevProps, prevState) {
 componentDidUpdate(prevProps, prevState, snapshot){
     console.log('[People.js] componentDidUpdate...');
     console.log(snapshot);
+}
+
+componentWillUnmount() {
+    console.log('[People.js] componentWillUnmount...');
 }
 
     render () {
