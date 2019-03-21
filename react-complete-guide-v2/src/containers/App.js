@@ -21,6 +21,7 @@ constructor(props) {
     ],
     showPeople: false,
     showCockpit: true,
+    changeCounter: 0
   };
 
 static getDerivedStateFromProps(props, state) {
@@ -66,8 +67,15 @@ nameChangeHandler = (event, id) => {
     const peopleToo = [...this.state.people];
     peopleToo[personIndex] = onePerson;
     
-    this.setState( {people: peopleToo })
-  }
+
+//the best practice for the state updates that depend on the old state    
+    this.setState( (prevState, props) => {
+      return {
+        people: peopleToo,
+        changeCounter: prevState.changeCounter + 1,  
+       } 
+      })
+    };
 
 
   togglePeopleHandler = () => {
@@ -91,14 +99,17 @@ nameChangeHandler = (event, id) => {
     return (
 
       <WithClass classes={classes.App}>
-      <button onClick={() => {this.setState({ showCockpit: false}); }}>REMOVE COCKPIT</button>
-      {this.state.showCockpit ? (
-
-
+       <button 
+         onClick={() => {
+           this.setState({ showCockpit: false}); 
+        }}>
+          REMOVE COCKPIT
+        </button>
+       {this.state.showCockpit ? (
            <Cockpit 
            title = {this.props.appTitle}
            showPeople = {this.state.showPeople}
-           people = {this.state.people} 
+           peopleLength = {this.state.people.length} 
            clicked = {this.togglePeopleHandler}
            />
            ): null }
