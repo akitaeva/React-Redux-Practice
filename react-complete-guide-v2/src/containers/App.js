@@ -5,6 +5,7 @@ import './App.css';
 import People from '../components/People/People';
 import Cockpit from '../components/Cockpit/Cockpit';
 import WithClass from '../hoc/WithClass';
+import AuthContext from '../context/auth-context';
 
 class App extends Component {
 constructor(props) {
@@ -21,7 +22,8 @@ constructor(props) {
     ],
     showPeople: false,
     showCockpit: true,
-    changeCounter: 0
+    changeCounter: 0,
+    authenticated: false,
   };
 
 static getDerivedStateFromProps(props, state) {
@@ -81,6 +83,10 @@ nameChangeHandler = (event, id) => {
   togglePeopleHandler = () => {
     const doesShow = this.state.showPeople;
     this.setState({showPeople : !doesShow})
+  };
+
+  loginHandler = () => {
+    this.setState({authenticated: true});
   }
 
   render() {
@@ -92,8 +98,9 @@ nameChangeHandler = (event, id) => {
       thePeople = <People
           people = {this.state.people}
           clicked = {this.deletePersonHnadler}
-          changed = {this.nameChangeHandler} />
-
+          changed = {this.nameChangeHandler} 
+          isAuthenticated = {this.loginHandler} 
+          />
     }
 
     return (
@@ -105,6 +112,11 @@ nameChangeHandler = (event, id) => {
         }}>
           REMOVE COCKPIT
         </button>
+        <AuthContext.Provider 
+          value={{
+            authenticated: this.state.authenticated,
+            login: this.loginHandler}}
+        >
        {this.state.showCockpit ? (
            <Cockpit 
            title = {this.props.appTitle}
@@ -114,6 +126,7 @@ nameChangeHandler = (event, id) => {
            />
            ): null }
           {thePeople}
+          </AuthContext.Provider>
       </WithClass>
 
     );
