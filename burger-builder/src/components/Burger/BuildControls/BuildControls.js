@@ -21,6 +21,8 @@ const buildCotrols = (props) => (
         removed={() => props.ingredientRemoved(ctrl.type)}
         disabled={props.disabled[ctrl.key]}/>
    ))} 
+    <Styled.OrderBtn
+    disabled={!props.readyToOrder}>ORDER NOW</Styled.OrderBtn>
   </Styled.Controls>
 );
 
