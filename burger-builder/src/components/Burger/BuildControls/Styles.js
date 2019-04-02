@@ -40,24 +40,24 @@ export const Control = Styled.div`
     }
   }
 
-  &.Less {  
+  & .Less {  
     background-color: #D39952;
     color: white;
+  }  
 
-    &:hover, &:active {
+  &:hover .Less, &:active .Less {
       background-color: #DAA972;
       color: white;
-    }
   }
 
-  &.More {
+  & .More {
     background-color: #8F5E1E;
     color: white;
+  }  
 
-    &:hover, &:active {
+    &:hover .More, &:active .More{
       background-color: #99703F;
-      color: white;
-    }  
+      color: white; 
   }
 `;
 
