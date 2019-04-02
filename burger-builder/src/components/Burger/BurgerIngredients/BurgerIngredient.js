@@ -25,12 +25,12 @@ class BurgerIngredient extends Component {
        case ('cheese'):
        ingredient = <Styled.Cheese></Styled.Cheese>;
        break;
+      case ('tomato'):
+       ingredient = <Styled.Tomato></Styled.Tomato>;
+       break;
       case ('greens'):
        ingredient = <Styled.Greens></Styled.Greens>;
-       break;
-      case ('mushroom'):
-       ingredient = <Styled.Mushrooms></Styled.Mushrooms>;
-       break;
+       break; 
       default:
        ingredient = null;
     }

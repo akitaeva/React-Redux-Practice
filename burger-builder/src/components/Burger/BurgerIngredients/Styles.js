@@ -20,8 +20,8 @@ export const BreadTop = Styled.div`
 `;
 
 export const Seeds1 = Styled.div`
-  width: 10%;
-  height: 15%;
+  width: 8%;
+  height: 10%;
   position: absolute;
   background-color: white;
   left: 30%;
@@ -36,7 +36,7 @@ export const Seeds1 = Styled.div`
     height: 100%;
     position: absolute;
     background-color: white;
-    left: -170%;
+    left: -190%;
     top: -260%;
     border-radius: 40%;
     transform: rotate(60deg);
@@ -58,8 +58,8 @@ export const Seeds1 = Styled.div`
 `;
 
 export const Seeds2 = Styled.div`
-  width: 10%;
-  height: 15%;
+  width: 8%;
+  height: 10%;
   position: absolute;
   background-color: white;
   left: 64%;
@@ -75,8 +75,8 @@ export const Seeds2 = Styled.div`
   height: 100%;
   position: absolute;
   background-color: white;
-  left: 150%;
-  top: -130%;
+  left: 170%;
+  top: -140%;
   border-radius: 40%;
   transform: rotate(90deg);
   box-shadow: inset 1px 3px #c9c9c9;
@@ -86,7 +86,7 @@ export const Seeds2 = Styled.div`
 export const Patty = Styled.div`
     width: 80%;
     height: 8%;
-    background: linear-gradient(#7f3608, #702e05);
+    background: linear-gradient(#7f3608, #66240c);
     margin: 2% auto;
     border-radius: 15px;
 `;
@@ -107,9 +107,10 @@ export const Greens = Styled.div`
     border-radius: 20px;
 `;
 
-export const Mushrooms = Styled.div`
+export const Tomato = Styled.div`
     width: 80%;
-    height: 3%;
-    background: linear-gradient(#bf3813, #c45e38);
+    height: 7%;
+    border-radius: 10px;
+    background: linear-gradient(#ef6b13, #ff0033);
     margin: 2% auto;
 `;
