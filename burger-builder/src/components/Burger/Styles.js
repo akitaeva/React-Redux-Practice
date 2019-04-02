@@ -4,6 +4,7 @@ export const Burger = Styled.div`
   width: 100%;
   margin: auto;
   height: 16rem;
+  background-color: #459;
   overflow: scroll;
   text-align: center;
   font-weight: bold;
