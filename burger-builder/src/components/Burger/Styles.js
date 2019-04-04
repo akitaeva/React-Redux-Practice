@@ -2,9 +2,11 @@ import Styled from 'styled-components';
 
 export const Burger = Styled.div`
   width: 100%;
-  margin: auto;
+  margin: auto auto .5rem;
+  padding: 1.5rem;
   height: 16rem;
   background-color: #459;
+  border-radius: 2%;
   overflow: scroll;
   text-align: center;
   font-weight: bold;

@@ -7,6 +7,7 @@ export const Controls = Styled.div`
   flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 1px #ccc;
+  border-radius: 15%;
   margin: auto;
   padding: 10px 0;
 `;

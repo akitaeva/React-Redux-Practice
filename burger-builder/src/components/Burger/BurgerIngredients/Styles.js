@@ -85,7 +85,7 @@ export const Seeds2 = Styled.div`
 
 export const Patty = Styled.div`
     width: 80%;
-    height: 8%;
+    height: 9.5%;
     background: linear-gradient(#7f3608, #66240c);
     margin: 2% auto;
     border-radius: 15px;
@@ -93,7 +93,7 @@ export const Patty = Styled.div`
 
 export const Cheese = Styled.div`
     width: 90%;
-    height: 4.5%;
+    height: 2.7%;
     margin: 2% auto;
     background: linear-gradient(#f4d004, #d6bb22);
     border-radius: 20px;
@@ -101,15 +101,15 @@ export const Cheese = Styled.div`
 
 export const Greens = Styled.div`
     width: 85%;
-    height: 7%;
+    height: 5%;
     margin: 2% auto;
     background: linear-gradient(#228c1d, #91ce50);
     border-radius: 20px;
 `;
 
 export const Tomato = Styled.div`
-    width: 80%;
-    height: 7%;
+    width: 75%;
+    height: 7.3%;
     border-radius: 10px;
     background: linear-gradient(#ef6b13, #ff0033);
     margin: 2% auto;
