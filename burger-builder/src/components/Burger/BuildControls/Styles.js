@@ -22,6 +22,7 @@ export const Control = Styled.div`
     display: block;
     font: inherit;
     padding: 5px;
+    margin: 0 3px;
     width: 80px;
     border: 1px solid #aa6817;
     curser: pointer;

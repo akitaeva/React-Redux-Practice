@@ -7,7 +7,6 @@ const burger = ({ingredients}) => {
   let receivedIngredients = Object.keys(ingredients)
     .map(ingKey => {
       return [...Array(ingredients[ingKey])].map((_, idx) => {
-        console.log("ingKey + idx", ingKey, idx);
         return <BurgerIngredient key={ingKey + idx} type={ingKey} />
       });
     })
@@ -18,7 +17,7 @@ const burger = ({ingredients}) => {
   if (receivedIngredients.length === 0) {
     receivedIngredients = <h5>Please add some ingredients</h5>
   }
-    console.log("receivedIngredients", receivedIngredients);
+
   return (
     <Styled.Burger>
       <BurgerIngredient type="bread-top"></BurgerIngredient>
