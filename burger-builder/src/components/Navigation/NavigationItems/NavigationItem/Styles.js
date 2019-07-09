@@ -5,7 +5,7 @@ export const NavItem = Styled.li`
   box-sizing: border-box;
   dispay: flex;
   height: 100%;
-  widht: auto;
+  width: auto;
 
   a {
     color: white;
@@ -23,5 +23,16 @@ export const NavItem = Styled.li`
     background-color: #8F5C2C;
     border-bottom: 4px solid #40A4C8;
     color: white;
+  }
+
+  @media (max-width: 500px) {
+    margin: 10px 0;
+    dispay: block;
+    width: 100%;
+
+    a {
+      color: #8F5C2C;
+      width: 100%;
+    }
   }
 `;
