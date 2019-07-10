@@ -1,6 +1,6 @@
-import Styled from 'styled-components/macro';
+import styled from 'styled-components/macro';
 
-export const ToolbarWrapper = Styled.header`
+export const ToolbarWrapper = styled.header`
   height: 56px;
   width: 100%;
   position: fixed;
@@ -13,9 +13,19 @@ export const ToolbarWrapper = Styled.header`
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 90;
+
+  @media (max-width: 500px) {
+    div {
+      display: none;
+    }
+  } 
 `;
 
 
-export const NavWrapper = Styled.nav`
+export const NavWrapper = styled.nav`
   height: 100%;
+
+  @media (max-width: 500px) {
+    display: none;
+  } 
 `;
