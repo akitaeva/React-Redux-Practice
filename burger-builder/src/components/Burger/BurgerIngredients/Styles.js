@@ -3,6 +3,7 @@ import Styled from 'styled-components';
 export const BreadBottom = Styled.div`
   height: 13%;
   width: 80%;
+  min-width: 300px;
   background: linear-gradient(#F08E4A, #e27b36);
   border-radius: 0 0 30px 30px;
   box-shadow: inset -15px 0 #c15711;
@@ -12,6 +13,7 @@ export const BreadBottom = Styled.div`
 export const BreadTop = Styled.div`
     height: 20%;
     width: 80%;
+    min-width: 300px;
     background: linear-gradient(#bc581e, #e27b36);
     border-radius: 50% 50% 0 0;
     box-shadow: inset -15px 0 #c15711;
@@ -85,6 +87,7 @@ export const Seeds2 = Styled.div`
 
 export const Patty = Styled.div`
     width: 80%;
+    min-width: 300px;
     height: 9.5%;
     background: linear-gradient(#7f3608, #66240c);
     margin: 2% auto;
@@ -93,6 +96,7 @@ export const Patty = Styled.div`
 
 export const Cheese = Styled.div`
     width: 90%;
+    min-width: 325px;
     height: 2.7%;
     margin: 2% auto;
     background: linear-gradient(#f4d004, #d6bb22);
@@ -101,6 +105,7 @@ export const Cheese = Styled.div`
 
 export const Greens = Styled.div`
     width: 85%;
+    min-width: 316px;
     height: 5%;
     margin: 2% auto;
     background: linear-gradient(#228c1d, #91ce50);
@@ -109,6 +114,7 @@ export const Greens = Styled.div`
 
 export const Tomato = Styled.div`
     width: 75%;
+    min-width: 280px;
     height: 7.3%;
     border-radius: 10px;
     background: linear-gradient(#ef6b13, #ff0033);

@@ -7,14 +7,12 @@ import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 class App extends Component {
   render() {
     return (
-      <div>
         <Layout>
-          <h3>Test</h3>
+          <h3 style={{ textAlign: 'center'}}>Build Your Burger Here:</h3>
           <BurgerBuilder>
             
           </BurgerBuilder>
         </Layout>
-      </div>
     );
   }
 }

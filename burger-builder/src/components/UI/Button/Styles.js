@@ -21,12 +21,12 @@ export const Button = Styled.button`
     margin-left: 0;
     padding-left: 0;
   }
+
+  .success {
+    color: #5C9210;
+  }
+
+  .danger {
+    color: #944317;
+  }
 `;
-
-// export const ButtonSuccess = Styled(Button)`
-//   color: #5C9210;
-// `;
-
-// export const ButtonDanger = Styled(Button)`
-//   color: #944317;
-// `;
