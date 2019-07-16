@@ -15,9 +15,7 @@ export const ToolbarWrapper = styled.header`
   z-index: 90;
 
   @media (max-width: 500px) {
-    div {
-      display: none;
-    }
+
   } 
 `;
 

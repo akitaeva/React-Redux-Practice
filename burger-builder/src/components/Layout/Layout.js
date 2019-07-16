@@ -8,20 +8,28 @@ import * as Styled from './Styles';
 
 class Layout extends Component { 
   state = {
-    showSideDrawer: true
+    showSideDrawer: false,
   }
   
-  sideDrawerHandler = () => {
+  closeSideDrawerHandler = () => {
    this.setState({showSideDrawer: false})
   }
+
+  sideDrawerToggleHandler = () => {
+    this.setState((prevState) => {
+      return {showSideDrawer: !prevState.showSideDrawer};
+    } );
+  }
+
   render () {
     return (
     <Aux>
       <SideDrawer 
         open={this.state.showSideDrawer} 
-        closed={this.sideDrawerHandler}
+        close={this.closeSideDrawerHandler}
       /> 
-      <Toolbar />
+      <Toolbar 
+        showDrawer={this.sideDrawerToggleHandler}/>
       <Styled.Content>
         {this.props.children}
       </Styled.Content>

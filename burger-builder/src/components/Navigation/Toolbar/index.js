@@ -2,12 +2,13 @@ import React from 'react';
 
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems';
+import DrawerToggle from '../SideDrawer/DrawerToggle';
 import * as Styled from './Styles';
 
 
-const toolbar = () => (
+const toolbar = ({ showDrawer }) => (
   <Styled.ToolbarWrapper>
-    <div>MENU</div>
+    <DrawerToggle clicked={showDrawer}/>
     <Logo height="75" />
     <Styled.NavWrapper>
        <NavigationItems />

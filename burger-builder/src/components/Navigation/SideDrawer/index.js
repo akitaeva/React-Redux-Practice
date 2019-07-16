@@ -7,14 +7,14 @@ import Aux from '../../../hoc/Aux';
 import * as Styled from './Styles';
 
 
-const sideDrawer = props => {
-  let visibility = 'translateX(-100%)';
-  if (props.open) { visibility = 'translateX(0)'}
+const sideDrawer = ({ open, close }) => {
+  let transform = 'translateX(-100%)';
+  if (open) { transform = 'translateX(0)'}
 
   return (
     <Aux>
-      <Backdrop show={props.open} clicked={props.closed}/>
-      <Styled.SideDraweWrapper visibility={visibility}>
+      <Backdrop show={open} clicked={close}/>
+      <Styled.SideDraweWrapper transform={transform}>
         <Logo height="6"/>
         <nav>
           <NavigationItems />

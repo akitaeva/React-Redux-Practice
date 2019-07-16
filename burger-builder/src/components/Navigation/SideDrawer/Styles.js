@@ -12,7 +12,8 @@ export const SideDraweWrapper =  styled.div`
   padding: 32px 16px;
   box-sizing: border-box;
   transition: transform 0.3s ease-out;
-  transform: ${({ visibility }) => visibility}
+  transform: ${({ transform }) => transform};
+
 
   @media (min-width: 500px) {
     display: none;
