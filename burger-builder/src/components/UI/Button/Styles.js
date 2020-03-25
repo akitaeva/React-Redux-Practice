@@ -23,10 +23,10 @@ export const Button = Styled.button`
   }
 
   .success {
-    color: #5C9210;
+    color: ${colors.success};
   }
 
   .danger {
-    color: #944317;
+    color: ${colors.danger};
   }
 `;
